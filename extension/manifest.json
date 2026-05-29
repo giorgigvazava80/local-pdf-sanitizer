@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "local-pdf-sanitizer",
+  "short_name": "local-pdf",
+  "version": "0.1.0",
+  "description": "Watches completed PDF downloads and asks a local sanitizer app to remove clickable links.",
+  "minimum_chrome_version": "105",
+  "permissions": [
+    "downloads",
+    "nativeMessaging",
+    "notifications",
+    "storage"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "local-pdf-sanitizer"
+  },
+  "options_page": "options.html"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "com.pdf_checker.sanitizer",
+  "description": "local-pdf-sanitizer native messaging host",
+  "path": "C:\\Path\\To\\PdfSanitizerHost.exe",
+  "type": "stdio",
+  "allowed_origins": [
+    "chrome-extension://YOUR_EXTENSION_ID/"
+  ]
+}

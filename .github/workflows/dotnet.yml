@@ -1,0 +1,30 @@
+name: dotnet
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET 8
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Restore native host
+        run: dotnet restore native-host/PdfSanitizerHost/PdfSanitizerHost.csproj
+
+      - name: Restore tests
+        run: dotnet restore tests/PdfSanitizerHost.Tests/PdfSanitizerHost.Tests.csproj
+
+      - name: Build Release
+        run: dotnet build native-host/PdfSanitizerHost/PdfSanitizerHost.csproj --configuration Release --no-restore
+
+      - name: Run tests
+        run: dotnet test tests/PdfSanitizerHost.Tests/PdfSanitizerHost.Tests.csproj --configuration Release --no-restore --verbosity normal

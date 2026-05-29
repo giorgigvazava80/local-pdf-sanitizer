@@ -1,0 +1,16 @@
+.venv/
+.dotnet/
+artifacts/
+bin/
+obj/
+logs/
+*.log
+*.sanitized.tmp
+*.original.pdf
+*.original-*.pdf
+native-host/com.pdf_checker.sanitizer.json
+native-host/publish/
+native-host/**/bin/
+native-host/**/obj/
+native-host/**/*.user
+native-host/**/logs/

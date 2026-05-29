@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>local-pdf-sanitizer Options</title>
+    <link rel="stylesheet" href="options.css">
+  </head>
+  <body>
+    <main>
+      <h1>local-pdf-sanitizer</h1>
+
+      <label class="option">
+        <input id="enabled" type="checkbox">
+        <span>
+          <strong>Sanitize completed PDF downloads</strong>
+          <small>When enabled, completed `.pdf` downloads are sent to the local sanitizer app.</small>
+        </span>
+      </label>
+
+      <label class="option">
+        <input id="keepBackup" type="checkbox">
+        <span>
+          <strong>Keep original backup</strong>
+          <small>Copy the downloaded PDF to `filename.original.pdf` before replacing it.</small>
+        </span>
+      </label>
+
+      <label class="option">
+        <input id="showNotifications" type="checkbox">
+        <span>
+          <strong>Show notifications</strong>
+          <small>Notify when a PDF is sanitized or when the native app cannot be reached.</small>
+        </span>
+      </label>
+
+      <p id="status" role="status" aria-live="polite"></p>
+    </main>
+
+    <script src="options.js"></script>
+  </body>
+</html>
